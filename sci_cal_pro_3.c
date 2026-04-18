@@ -4,21 +4,21 @@
 int main()
 {
     printf("__________Scientific Calculator__________\n");
-    printf("1.  Addition\n");
-    printf("2.  Subtraction\n");
-    printf("3.  Multiplication\n");
-    printf("4.  Division\n");
-    printf("5.  Power\n");
-    printf("6.  Square Root\n");
-    printf("7.  Cube Root\n");
-    printf("8.  Trigonometric Functions\n");
-    printf("9.  Inverse Trigonometric Functions\n");
-    printf("10. Hyperbolic Functions\n");
-    printf("11. Logarithm Functions\n");
-    printf("12. Exponential\n");
-    printf("13. Factorial\n");
-    printf("14. Modulo Operation\n");
-    printf("15. Absolute Value\n");
+    printf("1.  Addition (ex:a+b+c+....+n)\n");
+    printf("2.  Subtraction(ex:a-b-c-....-n)\n");
+    printf("3.  Multiplication(ex:a*b*c*....*n)\n");
+    printf("4.  Division(ex:a/b/c/..../n)\n");
+    printf("5.  Power(ex:a b)\n");
+    printf("6.  Square Root(ex:a)\n");
+    printf("7.  Cube Root(ex:a)\n");
+    printf("8.  Trigonometric Functions(ex:sin a,cos a,tan a)\n");
+    printf("9.  Inverse Trigonometric Functions(ex:asin a,acos a,atan a)\n");
+    printf("10. Hyperbolic Functions(ex:sinh a,cosh a,tanh a)\n");
+    printf("11. Logarithm Functions(ex: log a,ln a)\n");
+    printf("12. Exponential(ex: a)\n");
+    printf("13. Factorial(ex: a)\n");
+    printf("14. Modulo Operation(ex: a b)\n");
+    printf("15. Absolute Value(ex: a)\n");
     printf("16. Exit\n");
     int x;
     while (printf("Choice : "))
@@ -32,14 +32,23 @@ int main()
             while (scanf("%f%c", &a, &ch) == 2)
             {
                 sum += a;
-                if (isinf(sum) || isnan(sum)) overflow = 1;
+                if (isinf(sum) || isnan(sum))
+                {
+                    overflow = 1;
+                }
                 if (ch == '\n')
                 {
                     break;
                 }
             }
-            if (overflow) printf("Math Error\n");
-            else printf("%f\n", sum);
+            if (overflow)
+            {
+                printf("Math Error\n");
+            }
+            else
+            {
+                printf("%f\n", sum);
+            }
         }
         if (x == 2)
         {
@@ -53,7 +62,10 @@ int main()
                     while (scanf("%f%c", &b, &ch) == 2)
                     {
                         a -= b;
-                        if (isinf(a) || isnan(a)) overflow = 1;
+                        if (isinf(a) || isnan(a))
+                        {
+                            overflow = 1;
+                        }
                         if (ch == '\n')
                         {
                             break;
@@ -61,8 +73,14 @@ int main()
                     }
                 }
             }
-            if (overflow || isinf(a) || isnan(a)) printf("Math Error\n");
-            else printf("%f\n",a);
+            if (overflow || isinf(a) || isnan(a))
+            {
+                printf("Math Error\n");
+            }
+            else
+            {
+                printf("%f\n", a);
+            }
         }
         if (x == 3)
         {
@@ -72,14 +90,23 @@ int main()
             while (scanf("%f%c", &a, &ch) == 2)
             {
                 mul *= a;
-                if (isinf(mul) || isnan(mul)) overflow = 1;
+                if (isinf(mul) || isnan(mul))
+                {
+                    overflow = 1;
+                }
                 if (ch == '\n')
                 {
                     break;
                 }
             }
-            if (overflow) printf("Math Error\n");
-            else printf("%f\n", mul);
+            if (overflow)
+            {
+                printf("Math Error\n");
+            }
+            else
+            {
+                printf("%f\n", mul);
+            }
         }
         if (x == 4)
         {
@@ -88,7 +115,10 @@ int main()
             int error = 0;
             if (scanf("%f%c", &a, &ch) == 2)
             {
-                if (isinf(a) || isnan(a)) error = 1;
+                if (isinf(a) || isnan(a))
+                {
+                    error = 1;
+                }
                 if (ch != '\n')
                 {
                     while (scanf("%f%c", &b, &ch) == 2)
@@ -100,7 +130,10 @@ int main()
                         else if (!error)
                         {
                             a /= b;
-                            if (isinf(a) || isnan(a)) error = 1;
+                            if (isinf(a) || isnan(a))
+                            {
+                                error = 1;
+                            }
                         }
                         if (ch == '\n')
                         {
@@ -123,8 +156,14 @@ int main()
             float a,b;
             scanf("%f %f",&a,&b);
             float res = pow(a,b);
-            if (isinf(res) || isnan(res)) printf("Math Error\n");
-            else printf("%f\n", res);
+            if (isinf(res) || isnan(res))
+            {
+                printf("Math Error\n");
+            }
+            else
+            {
+                printf("%f\n", res);
+            }
         }
         if (x == 6)
         {
@@ -180,17 +219,29 @@ int main()
             scanf("%lf", &r);
             if (ch[0] == 'a' && ch[1] == 's' && ch[2] == 'i' && ch[3] == 'n')
             {
-                if (r >= -1 && r <= 1) printf("%lf\n", asin(r));
-                else printf("Math Error\n");
+                if (r >= -1 && r <= 1)
+                {
+                    printf("%f\n", asin(r)*180/3.1415926);
+                }
+                else
+                {
+                    printf("Math Error\n");
+                }
             }
             else if (ch[0] == 'a' && ch[1] == 'c' && ch[2] == 'o' && ch[3] == 's')
             {
-                if (r >= -1 && r <= 1) printf("%lf\n", acos(r));
-                else printf("Math Error\n");
+                if (r >= -1 && r <= 1)
+                {
+                    printf("%f\n", acos(r)*180/3.1415926);
+                }
+                else
+                {
+                    printf("Math Error\n");
+                }
             }
             else if (ch[0] == 'a' && ch[1] == 't' && ch[2] == 'a' && ch[3] == 'n')
             {
-                printf("%lf\n", atan(r));
+                printf("%f\n", atan(r)*180/3.1415926);
             }
         }
         if (x == 10)
@@ -202,14 +253,26 @@ int main()
             if (ch[0] == 's' && ch[1] == 'i' && ch[2] == 'n' && ch[3] == 'h')
             {
                 double res = sinh(r);
-                if (isinf(res) || isnan(res)) printf("Math Error\n");
-                else printf("%lf\n", res);
+                if (isinf(res) || isnan(res))
+                {
+                    printf("Math Error\n");
+                }
+                else
+                {
+                    printf("%lf\n", res);
+                }
             }
             else if (ch[0] == 'c' && ch[1] == 'o' && ch[2] == 's' && ch[3] == 'h')
             {
                 double res = cosh(r);
-                if (isinf(res) || isnan(res)) printf("Math Error\n");
-                else printf("%lf\n", res);
+                if (isinf(res) || isnan(res))
+                {
+                    printf("Math Error\n");
+                }
+                else
+                {
+                    printf("%lf\n", res);
+                }
             }
             else if (ch[0] == 't' && ch[1] == 'a' && ch[2] == 'n' && ch[3] == 'h')
             {
@@ -240,8 +303,14 @@ int main()
             double a;
             scanf("%lf", &a);
             double res = exp(a);
-            if (isinf(res) || isnan(res)) printf("Math Error\n");
-            else printf("%lf\n", res);
+            if (isinf(res) || isnan(res))
+            {
+                printf("Math Error\n");
+            }
+            else
+            {
+                printf("%lf\n", res);
+            }
         }
         if (x == 13)
         {
@@ -262,8 +331,14 @@ int main()
                     }
                     fact = fact * i;
                 }
-                if (overflow) printf("Math Error\n");
-                else printf("%d\n", fact);
+                if (overflow)
+                {
+                    printf("Math Error\n");
+                }
+                else
+                {
+                    printf("%d\n", fact);
+                }
             }
         }
         if (x == 14)
